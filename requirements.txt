@@ -1,0 +1,10 @@
+crewai
+crewai-tools[mcp]
+python-dotenv
+psycopg2
+fastapi
+uvicorn 
+vecs
+pinecone
+sentence-transformers
+structlog
