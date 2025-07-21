@@ -1,0 +1,73 @@
+{
+  "environment": "prod",
+  "debug": false,
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "workers": 4,
+    "reload": false,
+    "log_level": "info",
+    "access_log": true,
+    "timeout": 30,
+    "keepalive": 2
+  },
+  "database": {
+    "max_connections": 20,
+    "pool_size": 5,
+    "pool_timeout": 30,
+    "pool_recycle": 3600,
+    "echo": false
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/prod/app.log",
+    "max_bytes": 10485760,
+    "backup_count": 20
+  },
+  "monitoring": {
+    "health_check_interval": 60,
+    "metrics_enabled": true,
+    "performance_tracking": true,
+    "detailed_logging": false
+  },
+  "security": {
+    "cors_origins": [
+      "https://yourdomain.com",
+      "https://www.yourdomain.com",
+      "https://app.yourdomain.com"
+    ],
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 100
+    },
+    "api_key_required": true,
+    "trusted_hosts": [
+      "yourdomain.com",
+      "www.yourdomain.com",
+      "api.yourdomain.com"
+    ]
+  },
+  "features": {
+    "admin_endpoints": false,
+    "debug_endpoints": false,
+    "api_docs": false,
+    "detailed_errors": false
+  },
+  "ai_services": {
+    "timeout_seconds": 20,
+    "max_retries": 3,
+    "debug_mode": false
+  },
+  "performance": {
+    "enable_caching": true,
+    "cache_ttl_seconds": 300,
+    "enable_compression": true,
+    "max_request_size_mb": 10
+  },
+  "backup": {
+    "auto_backup_enabled": true,
+    "backup_interval_hours": 6,
+    "retention_days": 30
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "environment": "uat",
+  "debug": false,
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8001,
+    "workers": 2,
+    "reload": false,
+    "log_level": "info",
+    "access_log": true,
+    "timeout": 30,
+    "keepalive": 2
+  },
+  "database": {
+    "max_connections": 10,
+    "pool_size": 3,
+    "pool_timeout": 30,
+    "pool_recycle": 3600,
+    "echo": false
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/uat/app.log",
+    "max_bytes": 10485760,
+    "backup_count": 10
+  },
+  "monitoring": {
+    "health_check_interval": 60,
+    "metrics_enabled": true,
+    "performance_tracking": true,
+    "detailed_logging": false
+  },
+  "security": {
+    "cors_origins": [
+      "https://uat-frontend.yourdomain.com",
+      "https://uat.yourdomain.com"
+    ],
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 200
+    },
+    "api_key_required": false,
+    "trusted_hosts": [
+      "localhost",
+      "uat.yourdomain.com",
+      "uat-api.yourdomain.com"
+    ]
+  },
+  "features": {
+    "admin_endpoints": true,
+    "debug_endpoints": true,
+    "api_docs": true,
+    "detailed_errors": false
+  },
+  "ai_services": {
+    "timeout_seconds": 25,
+    "max_retries": 2,
+    "debug_mode": false
+  },
+  "testing": {
+    "load_testing_enabled": true,
+    "test_users_allowed": true,
+    "mock_services": false
+  }
+}
