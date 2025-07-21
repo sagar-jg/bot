@@ -1,0 +1,39 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "workers": 1,
+    "reload": true,
+    "log_level": "debug",
+    "access_log": true,
+    "timeout": 60,
+    "keepalive": 2
+  },
+  "database": {
+    "max_connections": 10,
+    "pool_size": 2,
+    "pool_timeout": 30,
+    "pool_recycle": 3600,
+    "echo": true
+  },
+  "logging": {
+    "level": "DEBUG",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/dev.log",
+    "max_bytes": 5242880,
+    "backup_count": 5
+  },
+  "monitoring": {
+    "health_check_interval": 30,
+    "metrics_enabled": true,
+    "performance_tracking": true
+  },
+  "security": {
+    "cors_origins": ["*"],
+    "rate_limiting": {
+      "enabled": false,
+      "requests_per_minute": 1000
+    },
+    "api_key_required": false
+  }
+}
